@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Whiteboard – Interactive Drawing Application</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🎨</span>
+                <span class="logo-text">Digital Whiteboard</span>
+                <span class="badge">Semester 3 Project</span>
+            </div>
+            <nav class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#architecture">Architecture</a>
+                <a href="#mockup">Live UI Mockup</a>
+                <a href="#quickstart">Quick Start</a>
+                <a href="#viva">Viva Prep</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-badge">✨ Core Java & Swing • Semester 3 Computer Science Project</div>
+            <h1 class="hero-title">
+                Interactive Drawing & Sketching <span class="gradient-text">Desktop Application</span>
+            </h1>
+            <p class="hero-description">
+                A creative desktop application engineered with Java Swing, Java 2D Graphics, 
+                16-color designer palette, 4 whiteboard themes, and double-buffered persistence.
+            </p>
+            <div class="hero-actions">
+                <a href="#quickstart" class="btn btn-primary">Run Desktop App 🚀</a>
+                <a href="#mockup" class="btn btn-secondary">Explore Live UI Mockup 👁️</a>
+            </div>
+            
+            <div class="tech-pills">
+                <span class="pill">Java 21+</span>
+                <span class="pill">Java Swing</span>
+                <span class="pill">Graphics2D</span>
+                <span class="pill">Double-Buffering</span>
+                <span class="pill">16-Color Palette</span>
+                <span class="pill">Board Themes</span>
+                <span class="pill">ImageIO</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive UI Mockup Showcase -->
+    <section id="mockup" class="section mockup-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Application UI Mockup</h2>
+                <p>Faithful recreation of the Java Swing desktop interface featuring our vibrant new color engine and board themes.</p>
+            </div>
+
+            <!-- Desktop Window Frame Mockup -->
+            <div class="desktop-window">
+                <!-- Window Titlebar -->
+                <div class="window-titlebar">
+                    <div class="window-dots">
+                        <span class="dot dot-red"></span>
+                        <span class="dot dot-yellow"></span>
+                        <span class="dot dot-green"></span>
+                    </div>
+                    <div class="window-title">Digital Whiteboard – Interactive Drawing Application [Workspace]</div>
+                    <div class="window-actions">1280 x 850 px</div>
+                </div>
+
+                <!-- Window Menu Bar -->
+                <div class="mockup-menubar">
+                    <span class="menu-item">File</span>
+                    <span class="menu-item">Edit</span>
+                    <span class="menu-item">Canvas</span>
+                    <span class="menu-item">Help</span>
+                </div>
+
+                <!-- Window Toolbar -->
+                <div class="mockup-toolbar">
+                    <div class="tool-group">
+                        <button class="mockup-btn active">🖌️ Brush</button>
+                        <button class="mockup-btn">✏️ Pencil</button>
+                        <button class="mockup-btn">🧹 Eraser</button>
+                        <button class="mockup-btn">📏 Line</button>
+                        <button class="mockup-btn">▭ Rect</button>
+                        <button class="mockup-btn">◯ Oval</button>
+                        <button class="mockup-btn">🔤 Text</button>
+                    </div>
+
+                    <div class="toolbar-divider"></div>
+
+                    <div class="stroke-group">
+                        <span class="toolbar-label">Size:</span>
+                        <input type="range" class="mockup-slider" min="1" max="50" value="8">
+                        <span class="badge-size">8px</span>
+                    </div>
+
+                    <div class="toolbar-divider"></div>
+
+                    <div class="color-group">
+                        <span class="toolbar-label">Color:</span>
+                        <div class="active-swatch"></div>
+                        <div class="swatch-list">
+                            <span class="swatch" style="background: #0f172a;" title="Obsidian Black"></span>
+                            <span class="swatch" style="background: #ffffff;" title="Pure White"></span>
+                            <span class="swatch" style="background: #ef4444;" title="Crimson Red"></span>
+                            <span class="swatch" style="background: #f43f5e;" title="Rose Coral"></span>
+                            <span class="swatch" style="background: #f97316;" title="Vivid Orange"></span>
+                            <span class="swatch" style="background: #f59e0b;" title="Amber Gold"></span>
+                            <span class="swatch" style="background: #84cc16;" title="Lime Neon"></span>
+                            <span class="swatch" style="background: #10b981;" title="Emerald Green"></span>
+                            <span class="swatch" style="background: #06b6d4;" title="Electric Cyan"></span>
+                            <span class="swatch" style="background: #3b82f6;" title="Royal Blue"></span>
+                            <span class="swatch" style="background: #6366f1;" title="Indigo"></span>
+                            <span class="swatch" style="background: #8b5cf6;" title="Purple Violet"></span>
+                            <span class="swatch" style="background: #d946ef;" title="Deep Magenta"></span>
+                            <span class="swatch" style="background: #ec4899;" title="Hot Pink"></span>
+                        </div>
+                    </div>
+
+                    <div class="toolbar-divider"></div>
+
+                    <div class="action-group">
+                        <button class="mockup-btn">↩ Undo</button>
+                        <button class="mockup-btn">↪ Redo</button>
+                        <button class="mockup-btn danger">🗑️ Clear</button>
+                    </div>
+                </div>
+
+                <!-- Canvas Workspace -->
+                <div class="mockup-canvas-container">
+                    <div class="mockup-canvas">
+                        <svg class="canvas-art" viewBox="0 0 1000 460">
+                            <!-- Background Grid -->
+                            <defs>
+                                <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#f1f5f9" stroke-width="1"/>
+                                </pattern>
+                                <linearGradient id="brushGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#06b6d4" />
+                                    <stop offset="50%" stop-color="#6366f1" />
+                                    <stop offset="100%" stop-color="#ec4899" />
+                                </linearGradient>
+                            </defs>
+                            <rect width="1000" height="460" fill="url(#grid)" />
+
+                            <!-- Vibrant Artistic Freehand Stroke -->
+                            <path d="M 80 200 Q 240 60, 420 220 T 720 160" fill="none" stroke="url(#brushGrad)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+                            
+                            <!-- Colorful Geometric Shapes -->
+                            <rect x="680" y="70" width="220" height="120" rx="10" fill="#3b82f6" fill-opacity="0.12" stroke="#3b82f6" stroke-width="3" />
+                            <circle cx="860" cy="320" r="70" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-width="3.5" />
+                            <ellipse cx="320" cy="340" rx="90" ry="50" fill="#f59e0b" fill-opacity="0.15" stroke="#f59e0b" stroke-width="3" />
+                            <line x1="100" y1="380" x2="520" y2="380" stroke="#f43f5e" stroke-width="5" stroke-linecap="round" />
+
+                            <!-- Typography on Canvas -->
+                            <text x="705" y="130" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="18" fill="#1e293b">Digital Whiteboard</text>
+                            <text x="705" y="155" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="13" fill="#6366f1">16-Color Palette • 4 Board Themes</text>
+                            
+                            <text x="100" y="360" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="15" fill="#64748b">Semester 3 Computer Science Project</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Window Status Bar -->
+                <div class="mockup-statusbar">
+                    <div class="status-left">
+                        <span><strong>Tool:</strong> 🖌️ Brush</span>
+                        <span><strong>Color:</strong> Electric Cyan (#06B6D4)</span>
+                        <span><strong>Stroke:</strong> 8 px</span>
+                    </div>
+                    <div class="status-right">
+                        <span><strong>Cursor:</strong> X: 520 px, Y: 240 px</span>
+                        <span><strong>Canvas:</strong> 1200 x 800 px</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Key Project Capabilities</h2>
+                <p>Designed and built with vibrant aesthetics, object-oriented architecture, and robust event handling.</p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="card">
+                    <div class="card-icon">🖌️</div>
+                    <h3>Smooth Freehand Drawing</h3>
+                    <p>Continuous anti-aliased brush and pencil strokes with dynamic thickness, round caps, and seamless joint rendering.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">📐</div>
+                    <h3>Precision Geometric Shapes</h3>
+                    <p>Live rubberband preview for straight lines, hollow & filled rectangles, circles, and ellipses in any drag direction.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🎨</div>
+                    <h3>16-Color Palette & Themes</h3>
+                    <p>Curated designer swatches, full RGB JColorChooser picker, and 4 canvas board themes (Whiteboard, Blackboard, Cream, Blueprint).</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🧹</div>
+                    <h3>Configurable Eraser Tool</h3>
+                    <p>Custom stroke size eraser with interactive cursor tracking and one-click full canvas reset confirmation.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">↩️</div>
+                    <h3>Multi-Level Undo & Redo</h3>
+                    <p>Bounded state history stack capturing canvas snapshots, allowing you to step backward and forward freely.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">💾</div>
+                    <h3>Image Save & Open (PNG/JPG)</h3>
+                    <p>Export artwork directly to your computer using <code>ImageIO</code> and <code>JFileChooser</code> with overwrite safety.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture & OOP Section -->
+    <section id="architecture" class="section bg-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2>Software Architecture & OOP Design</h2>
+                <p>Demonstrating textbook Object-Oriented Programming and Design Patterns.</p>
+            </div>
+
+            <div class="architecture-grid">
+                <div class="arch-card">
+                    <h4>🏛️ Strategy Pattern (Polymorphism)</h4>
+                    <p><code>DrawingTool</code> interface defines the drawing contract. <code>BrushTool</code>, <code>EraserTool</code>, <code>ShapeTool</code>, and <code>TextTool</code> implement polymorphic behavior dynamically swapped at runtime.</p>
+                </div>
+                <div class="arch-card">
+                    <h4>🖼️ Off-Screen Double Buffering</h4>
+                    <p>Artwork is rendered onto an off-screen <code>BufferedImage</code> buffer. <code>paintComponent(Graphics g)</code> draws the buffer, preventing any flickering or lost drawings during window resize or repaint.</p>
+                </div>
+                <div class="arch-card">
+                    <h4>🎯 Event-Driven Decoupling</h4>
+                    <p><code>CanvasMouseHandler</code> captures mouse press, drag, release, and move events, forwarding them to the active tool while decoupling UI mechanics from business logic.</p>
+                </div>
+                <div class="arch-card">
+                    <h4>🛡️ Exception Handling & File I/O</h4>
+                    <p><code>FileManager</code> wraps image reading/writing in <code>try-catch-finally</code> blocks, gracefully handling <code>IOException</code> with interactive error alerts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Start Guide -->
+    <section id="quickstart" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Compilation & Execution Guide</h2>
+                <p>How to compile and launch the application directly from the command line or VS Code.</p>
+            </div>
+
+            <div class="code-box">
+                <div class="code-header">
+                    <span>Windows PowerShell / Command Prompt</span>
+                    <button class="copy-badge">Terminal</button>
+                </div>
+                <pre><code><span class="comment"># 1. Navigate to the project root</span>
+cd C:\Users\himanshu\digital_whiteboard
+
+<span class="comment"># 2. Compile all Java source files into the bin directory</span>
+javac -d bin src\Main.java src\gui\*.java src\tools\*.java src\events\*.java src\utilities\*.java
+
+<span class="comment"># 3. Launch the application</span>
+java -cp bin Main</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p><strong>Digital Whiteboard</strong> – Semester 3 Computer Science College Project</p>
+            <p>Built with Java Swing, Java AWT Graphics2D, 16-Color Palette & HTML/CSS Showcase.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
